@@ -1,6 +1,6 @@
-* Last name:
-* First name:
-* Github username:
+* Last name: Wingreen
+* First name: Emma
+* Github username: onlinecsteacher
 
 * Instructions:
 
