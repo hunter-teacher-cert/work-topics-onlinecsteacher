@@ -20,4 +20,8 @@ def index():
 def about():
   return render_template("about.html")
 
+@app.route("/lucky")
+def lucky():
+  return render_template("lucky.html")
+
 app.run(host="0.0.0.0", port=5000, debug=True)
