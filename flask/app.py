@@ -22,6 +22,12 @@ def about():
 
 @app.route("/lucky")
 def lucky():
+  print(randomnumber())
   return render_template("lucky.html")
+
+# @app.route('/hello/')
+# @app.route('/hello/<name>')
+# def hello(name=None):
+#     return render_template('hello.html', name=name)
 
 app.run(host="0.0.0.0", port=5000, debug=True)
