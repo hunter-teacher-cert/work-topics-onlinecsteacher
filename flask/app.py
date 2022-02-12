@@ -13,12 +13,16 @@ def randomnumber():
   return s
 
 @app.route("/")
+# def index():
+#   return "<h1>Hello World!</h1>"
+
 def index():
-  return "<h1>Hello World!</h1>"
+  return render_template('index.html')
 
 @app.route("/about")
 def about():
-  return render_template("about.html", username = 'Miguel')
+  user = {'username': 'Mike'}
+  return render_template('about.html',  user=user)
 
 @app.route("/lucky")
 def lucky():
