@@ -1,8 +1,14 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 import random
 
 app = Flask(__name__)
+
+@app.route("/")
+# def index():
+#   return "<h1>Hello World!</h1>"
+def index():
+  return render_template('index.html')
 
 @app.route("/rand")
 def randomnumber():
@@ -12,20 +18,50 @@ def randomnumber():
   s = s + "</h1>"
   return s
 
-@app.route("/")
-# def index():
-#   return "<h1>Hello World!</h1>"
-
-def index():
-  return render_template('index.html')
-
 @app.route("/about")
 def about():
   user = {'username': 'Mike'}
-  return render_template('about.html',  user=user)
+  return render_template('about.html',user=user)
 
 @app.route("/lucky")
 def lucky():
   return render_template("lucky.html", number=random.randrange(100), number2 = random.randrange(10))
+
+# example of static content
+# like an image or including css
+@app.route("/image_css")
+def image_css():
+  return render_template("image_css.html")
+
+@app.route("/form_demo",methods=['GET','POST'])
+def form_demo():
+  # GET is when we just load the page in our browser
+  # POST is when we click the button 
+  if request.method=="GET":
+    return render_template("form_demo.html")
+  else:
+    # here we clicked the button
+    # so we can check the form data
+    name = request.form['username']
+    pw = request.form['password']
+    print(name,pw)
+    if pw == "12345":
+      error = "BAD PASSWORD"
+      name=""
+    else: 
+      error = ""
+      
+    return render_template("form_demo.html",error=error, name=name)
+
+@app.route("/session_demo")
+def session_demo():
+
+  print(session)
+  if 'count' not in session:
+    session['count'] = 1
+  else:
+    session['count'] = session['count'] + 1
+
+  return render_template('session_demo.html',count = session['count'])
 
 app.run(host="0.0.0.0", port=5000, debug=True)
