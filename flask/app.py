@@ -1,8 +1,9 @@
-from flask import Flask, request
+from flask import Flask, request, session
 from flask import render_template
 import random
 
 app = Flask(__name__)
+app.secret_key = "mysecretkey"
 
 @app.route("/")
 # def index():
@@ -18,20 +19,27 @@ def randomnumber():
   s = s + "</h1>"
   return s
 
-@app.route("/about")
-def about():
-  user = {'username': 'Mike'}
-  return render_template('about.html',user=user)
-
 @app.route("/lucky")
 def lucky():
   return render_template("lucky.html", number=random.randrange(100), number2 = random.randrange(10))
+
+@app.route("/list")
+def list():
+  return render_template("list.html")
 
 # example of static content
 # like an image or including css
 @app.route("/image_css")
 def image_css():
   return render_template("image_css.html")
+
+@app.route("/about", methods=['GET','POST'])
+def about():
+  if request.method=="GET":
+    return render_template("about.html")
+  else:
+    user = request.form['username']
+    return render_template('about.html',user=user)
 
 @app.route("/form_demo",methods=['GET','POST'])
 def form_demo():
@@ -45,12 +53,11 @@ def form_demo():
     name = request.form['username']
     pw = request.form['password']
     print(name,pw)
-    if pw == "12345":
+    if pw != "12345":
       error = "BAD PASSWORD"
       name=""
     else: 
       error = ""
-      
     return render_template("form_demo.html",error=error, name=name)
 
 @app.route("/session_demo")
@@ -62,6 +69,6 @@ def session_demo():
   else:
     session['count'] = session['count'] + 1
 
-  return render_template('session_demo.html',count = session['count'])
+  return render_template("session_demo.html",count = session['count'])
 
 app.run(host="0.0.0.0", port=5000, debug=True)

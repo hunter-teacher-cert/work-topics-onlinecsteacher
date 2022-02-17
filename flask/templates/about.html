@@ -1,12 +1,17 @@
-<h1>About</h1>
-
-<h2> This is an about page </h2>
+{% if name != ""%}
+<h1>Hello, {{user}}!</h1>
+{% endif %}
 
 <body>
-  <h1>Hello, {{user.username}}!</h1>
-</body>
+<form method="POST">
+Enter your name: 
+<input name="username">
+<button>SUBMIT</button>
+</form>
+<body>
 
-<ol>
-  <li> one </li>
-  <li> two </li>
-  <li> three </li>
+<a href="/">Go Home</a>
+
+
+
+
