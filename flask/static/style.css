@@ -1,0 +1,4 @@
+body { background-color: lightblue; }
+
+li:hover {background-color: green;}
+li {color: white;}
