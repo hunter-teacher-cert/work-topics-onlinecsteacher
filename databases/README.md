@@ -50,7 +50,7 @@ ORDER BY allCuts.Teacher ASC, allCuts.ScanTime
 ### A list of all math teachers whose classes are cut
 
 SELECT CourseSection, Teacher, COUNT(Attendance = "A") AS TotalCuts  \
-FROM (SELECT s.First, s.Last, s.studentID, s.Grade, s.ScanTime, s.Status,\ 
+FROM (SELECT s.First, s.Last, s.studentID, s.Grade, s.ScanTime, s.Status, \
 Date, CourseSection, Attendance, Teacher, Period \
 FROM scan AS s \
 INNER JOIN periodAtt AS p \
