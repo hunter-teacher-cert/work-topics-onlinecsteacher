@@ -18,6 +18,7 @@ WHERE Attendance = "A" \
 ORDER BY s.Last ASC
 
 ## Async Query 1
+### A list of all teachers whose classes are cut most often
 
 SELECT teacher, COUNT(*) AS total FROM \
 (SELECT s.First, s.Last, s.studentID, s.Grade, s.ScanTime, s.Status, \
@@ -30,4 +31,17 @@ ORDER BY s.Last ASC) \
 GROUP BY teacher \
 ORDER BY total DESC 
 
+## Async Query 2
+### All students who have cut class and parent contact info where available
 
+SELECT * FROM (SELECT s.First, s.Last, s.studentID, s.Grade, s.ScanTime, s.Status, 
+Date, CourseSection, Attendance, Teacher, Period
+FROM scan AS s
+INNER JOIN periodAtt AS p
+ON s.studentID=p.studentID AND SUBSTR(s.scanTime, 1, 9)=p.date
+WHERE Attendance = "A"
+ORDER BY s.Last ASC)
+AS allCuts
+INNER JOIN bio AS b
+ON allCuts.studentID=b.studentID
+ORDER BY allCuts.Teacher ASC, allCuts.ScanTime 
