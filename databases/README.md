@@ -28,6 +28,6 @@ ON s.studentID=p.studentID AND SUBSTR(s.scanTime, 1, 9)=p.date \
 WHERE Attendance = "A" \
 ORDER BY s.Last ASC) \
 GROUP BY teacher \
-ORDER BY total DESC \
+ORDER BY total DESC 
 
 
