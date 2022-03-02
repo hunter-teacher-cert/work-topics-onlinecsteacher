@@ -6,10 +6,14 @@ app = Flask(__name__)
 app.secret_key = "mysecretkey"
 
 @app.route("/")
-# def index():
-#   return "<h1>Hello World!</h1>"
 def index():
-  return render_template('index.html')
+  print(session)
+  if 'count' not in session:
+    session['count'] = 1
+  else:
+    session['count'] = session['count'] + 1
+  return render_template("index.html",count = session['count'])
+  # return render_template('index.html')
 
 @app.route("/rand")
 def randomnumber():
@@ -41,34 +45,29 @@ def about():
     user = request.form['username']
     return render_template('about.html',user=user)
 
-@app.route("/form_demo",methods=['GET','POST'])
-def form_demo():
+@app.route("/login_form",methods=['GET','POST'])
+def login_form():
   # GET is when we just load the page in our browser
   # POST is when we click the button 
   if request.method=="GET":
-    return render_template("form_demo.html")
+    return render_template("login_form.html")
   else:
     # here we clicked the button
     # so we can check the form data
     name = request.form['username']
     pw = request.form['password']
     print(name,pw)
-    if pw != "12345":
-      error = "BAD PASSWORD"
+    if name != "Emma":
+      error = "Username not recognized"
+      name=""
+      pw = ""
+    elif pw != "12345":
+      error = "Incorrect password"
       name=""
     else: 
       error = ""
-    return render_template("form_demo.html",error=error, name=name)
+    return render_template("login_form.html",error=error, name=name)
 
-@app.route("/session_demo")
-def session_demo():
 
-  print(session)
-  if 'count' not in session:
-    session['count'] = 1
-  else:
-    session['count'] = session['count'] + 1
-
-  return render_template("session_demo.html",count = session['count'])
 
 app.run(host="0.0.0.0", port=5000, debug=True)

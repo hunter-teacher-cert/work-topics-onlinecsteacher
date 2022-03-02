@@ -3,28 +3,35 @@
       CSCI 707 Website
     </title>
     <head>
-        <h1> Hello, World! </h1>
+        <h1> Welcome to my site! </h1>
     </head>
+
     <body>
-    <h3>
-       <a href="/form_demo">Login</a>
-    </h3>
+      <h3>
+      <a href="{{ url_for('login_form') }}">Login</a>
+      <br>
     </body>
+
     <body>
-      <h3><a href="https://work-topics-onlinecsteacher.emmawingreen.repl.co/about">About</a></h3>
+      <h3> Fun links: </h3>
+      <a href="{{ url_for('lucky') }}">I'm   
+        Feeling Lucky</a>
+      <br>
+      <a href="{{ url_for('list') }}">Celebrity 
+        Numbers</a>
+      <br>
+      <a href="{{ url_for('image_css') }}">Some CS 
+        Humor</a>
+      </h3>
     </body>
-    <body>
-        <h3><a href="https://work-topics-onlinecsteacher.emmawingreen.repl.co/lucky">I'm Feeling Lucky</a></h3>
-    </body>
-    <body>
-      <h3><a href="https://work-topics-onlinecsteacher.emmawingreen.repl.co/list">Celebrity Numbers</a></h3>
-    </body>
-    <body>
-      <h3><a href="https://work-topics-onlinecsteacher.emmawingreen.repl.co/image_css">Some CS Humor</a></h3>
-    </body>
-    <body>
-      <h3><a href="https://work-topics-onlinecsteacher.emmawingreen.repl.co/session_demo">Session Count</a></h3>
-    </body>
+   <h4>{% if count < 2%}
+     <body>This is your first time visiting this 
+       page! You've visited it {{count}} time. 
+      {% else %}
+       You must like this page! You've visited 
+        it {{count}} times. 
+      </body>
+      {% endif %}</h4>
 </html>
 
 <link rel="stylesheet" href="/static/style.css">
