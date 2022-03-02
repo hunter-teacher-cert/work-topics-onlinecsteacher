@@ -4,6 +4,6 @@
 Link to my website: https://work-topics-onlinecsteacher.emmawingreen.repl.co/
 
 To run it: 
-* cd flask
-* python3 app.py
+- cd flask
+- python3 app.py
 
