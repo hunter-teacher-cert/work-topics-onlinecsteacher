@@ -7,3 +7,10 @@ To run it:
 - cd flask
 - python3 app.py
 
+Log in using: 
+- Username: Emma
+- Password: 12345
+
+If you enter the wrong username or password it will send you an error message.
+When you log in correctly it will give you a welcome message and change the screen color.
+
