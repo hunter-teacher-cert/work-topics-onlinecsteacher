@@ -1,6 +1,6 @@
 <style type='text/css'>
   body {
-    background-color: lightblue
+    background-color: lightcyan
   }
   
   h3 {
@@ -17,8 +17,6 @@ body {
 </style>
 {% else %}
 <h1>Please log in</h1>
-{% endif %}
-
 <h3> {{error}} </h3>
 <form method="POST">
 Username: 
@@ -30,5 +28,8 @@ Password:
 <input name="password">
 <button>SUBMIT</button>
 </form>
+{% endif %}
+
+
 
 <a href="/">Go Home</a>
