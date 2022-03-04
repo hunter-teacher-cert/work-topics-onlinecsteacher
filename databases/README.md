@@ -90,4 +90,4 @@ ON s.studentID=p.studentID AND SUBSTR(s.scanTime, 1, 9)=p.date \
 WHERE Attendance = "A" \
 ORDER BY s.Last ASC) \
 AS allCuts \
-GROUP BY studentID, Period, scanTime
+GROUP BY studentID, Period, scanTime 
