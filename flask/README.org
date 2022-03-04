@@ -15,5 +15,5 @@ If you enter the wrong username or password it will send you a unique error mess
 
 Click on "Some CS Humor" for some funny CS comics.
 
-Check out my blog for to learn more about the coolest natural attractions I've visited!
+Check out my blog to learn more about the coolest natural attractions I've visited!
 
