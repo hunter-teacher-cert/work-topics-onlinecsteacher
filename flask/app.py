@@ -15,6 +15,10 @@ def index():
   return render_template("index.html",count = session['count'])
   # return render_template('index.html')
 
+@app.route("/blog")
+def blog():
+  return render_template("blog.html") 
+
 @app.route("/rand")
 def randomnumber():
   i = random.randrange(100)
