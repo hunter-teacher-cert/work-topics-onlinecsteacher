@@ -38,7 +38,7 @@ SELECT * FROM (SELECT s.First, s.Last, s.studentID, s.Grade, s.ScanTime, s.Statu
 Date, CourseSection, Attendance, Teacher, Period \
 FROM scan AS s \
 INNER JOIN periodAtt AS p \
-ON s.studentID=p.studentID AND SUBSTR(s.scanTime, 1, 9)=p.date \
+ON s.studentID=p.studentID AND SUBSTR(s.scanTime, 1, instr(s.scanTime, ' ')-1)=p.date \
 WHERE Attendance = "A" \
 ORDER BY s.Last ASC) \
 AS allCuts \
@@ -71,8 +71,6 @@ ORDER BY TotalCuts DESC
 ## Async Query 4
 ### A list of all cuts by student and by period 
 
-Right now only TotalCuts column works
-
 SELECT First, Last, studentID, Attendance, Teacher, Period, \
 (Period='1') AS Pd1, \
 (Period='2') AS Pd2, \
@@ -92,4 +90,4 @@ ON s.studentID=p.studentID AND SUBSTR(s.scanTime, 1, 9)=p.date \
 WHERE Attendance = "A" \
 ORDER BY s.Last ASC) \
 AS allCuts \
-GROUP BY studentID
+GROUP BY studentID, Period, scanTime
