@@ -66,3 +66,30 @@ OR allCuts.Teacher = "Klar, S" \
 OR allCuts.Teacher = "Oto, T" \
 OR allCuts.Teacher = "Pylant, C" \
 ORDER BY TotalCuts DESC
+
+
+## Async Query 4
+### A list of all cuts by student and by period 
+
+Right now only TotalCuts column works
+
+SELECT First, Last, studentID, Attendance, Teacher, Period, \
+(Period='1') AS Pd1, \
+(Period='2') AS Pd2, \
+(Period='3') AS Pd3, \
+(Period='4') AS Pd4, \
+(Period='5') AS Pd5, \
+(Period='6') AS Pd6, \
+(Period='7') AS Pd7, \
+(Period='8') AS Pd8, \
+(Period='9') AS Pd9, \
+COUNT(Period) AS TotalCuts \
+FROM (SELECT s.First, s.Last, s.studentID, s.Grade, s.ScanTime, s.Status, \
+Date, CourseSection, Attendance, Teacher, Period \
+FROM scan AS s \
+INNER JOIN periodAtt AS p \
+ON s.studentID=p.studentID AND SUBSTR(s.scanTime, 1, 9)=p.date \
+WHERE Attendance = "A" \
+ORDER BY s.Last ASC) \
+AS allCuts \
+GROUP BY studentID
