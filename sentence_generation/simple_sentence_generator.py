@@ -15,26 +15,35 @@ def dependent_clause():
 def simple_sentence():
     return independent_clause() + "."
 
-# def compound_sentence():
-#     # add code here
-# def complex_sentence():
-#     # add code here
-# def compound_complex_sentence():
-#     # add code here
+def compound_sentence():
+    return independent_clause() + " " + random.choice(conjunctions)
+    + " " + independent_clause()
+
+def complex_sentence():
+    return dependent_clause() + " " + independent_clause
+
+def compound_complex_sentence():
+    return dependent_clause() + " " + independent_clause()
+    + " " + random.choice(conjunction) + " " + independent_clause()
 
 if __name__ == "__main__":
-    #test print for simple sentence
-    sentence = simple_sentence()
-    print(sentence)
 
-    dependent_clause = dependent_clause()
-    print(dependent_clause)
-    # #test print for compound sentence
+    # # test print for simple sentence
+    # sentence = simple_sentence()
+    # print(sentence)
+
+    ## test print for dependent_clause
+    # dependent_clause = dependent_clause()
+    # print(dependent_clause)
+
+    # test print for compound sentence
     # compound_sentence = compound_sentence()
     # print(compound_sentence)
-    # #test print for complex sentence
+
+    ## test print for complex sentence
     # complex_sentence = complex_sentence()
     # print(complex_sentence)
-    # #test print for compound-complex sentence
-    # compound_complex_sentence = compound_complex_sentence()
-    # print(compound_complex_sentence)
+
+    #test print for compound-complex sentence
+    compound_complex_sentence = compound_complex_sentence()
+    print(compound_complex_sentence)
