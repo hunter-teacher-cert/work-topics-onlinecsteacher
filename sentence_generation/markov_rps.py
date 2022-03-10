@@ -8,11 +8,6 @@
 # After losing with a rock, for example, a player was more likely to play
 # paper in the next round than the "one in three" rule would predict.
 
-# Questions:
-# 1. Does the computer have a 1 in 3 guess for each outcome?
-# 2. How do we make the computer compete against the player?
-#    e.g. If computer plays rock and player plays scissors, player loses
-# 3. How do we get the player to select a new outcome only IF they lost?
 
 import random
 
