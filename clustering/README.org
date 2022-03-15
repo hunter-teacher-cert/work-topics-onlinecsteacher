@@ -1,7 +1,7 @@
 * Last Name: Wingreen
 * First Name: Emma
 
-###Async Assignment:
+### Async Assignment:
 
 You probably know that when you log into Netflix, the shows and movies recommended to you are customized based on your viewing activity. But did you know that even the thumbnails you see are customized to you? (Source: Becoming Human: Artificial Intelligence Magazine)
 
