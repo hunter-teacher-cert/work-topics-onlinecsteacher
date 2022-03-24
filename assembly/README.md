@@ -2,9 +2,9 @@
 * First Name: Emma
 
 **Homework (buggy):**
-INP
-STA 99
-INP
+INP \
+STA 99 \
+INP \
 ADD 99
 STA 99
 INP
