@@ -1,8 +1,7 @@
 * Last Name: Wingreen
 * First Name: Emma
 
-**Homework (buggy):** 
-
+**Homework (buggy):** \
 INP \
 STA 99 \
 INP \
@@ -14,8 +13,7 @@ OUT \
 HLT
 
 
-**Homework (debugged):**
-
+**Homework (debugged):** \
 INP \
 STA 99 \
 INP \
@@ -29,8 +27,7 @@ OUT \
 HLT
 
 
-**Mild:**
-
+**Mild:** \
 INP \
 STA 99 \
 INP \
