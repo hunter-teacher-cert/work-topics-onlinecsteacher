@@ -1,7 +1,7 @@
 * Last Name: Wingreen
 * First Name: Emma
 
-####Playfair Cipher
+#### Playfair Cipher
 
 The Playfair cipher is an encryption method that pairs together letters from the original message in order to encrypt them. It relies on a 5x5 square where letters are entered either alphabetically (usually omitting the J) or according to a given code.
 
