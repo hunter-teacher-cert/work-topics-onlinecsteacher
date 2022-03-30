@@ -40,3 +40,22 @@ HLT \
 HLT \
 LDA 98 \
 OUT
+
+
+**Spicy:** \
+INP \
+SUB b \
+STA 91 \
+LDA 91 \
+BRP 8 \
+LDA 40 \
+OUT \
+HLT \
+SUB b \
+STA 91 \
+INP \
+ADD 40 \
+STA 40 \
+BRA 3 \
+b DAT 1
+
