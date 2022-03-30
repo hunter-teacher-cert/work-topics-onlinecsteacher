@@ -5,7 +5,7 @@
 
 The Playfair cipher is an encryption method that pairs together letters from the original message in order to encrypt them. It relies on a 5x5 square where letters are entered either alphabetically (usually omitting the J) or according to a given code.
 
-The basic rules are as follows (pictures in the thread):
+The basic rules are as follows:
 
 1. Pair off each letter (for any standalone letter assign it an additional bogus letter)
 2. **If both letters are in the same column** — take the letter directly under each letter in the 5x5 grid
