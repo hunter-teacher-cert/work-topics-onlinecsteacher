@@ -70,14 +70,40 @@ proof3 = '0000' + str(random.randint(1,21000000))
 ####################################################
 # STEP 1 instantiate the blockchain object
 
+ethereum = Blockchain()
+
 # STEP 2 print the empty chain that has the genesis block with proof =100
 
-# STEP 3 initiate the first transation of 1BTC from ___ to ___ by calling the new_transaction() on the object
+print(ethereum.chain)
+
+# STEP 3 initiate the first transaction of 1BTC from ___ to ___ by calling the new_transaction() on the object
+
+ethereum.new_transaction('Emma', 'Cleo', '.05 BTC')
 
 # STEP 4 add the new block to the chain using the new_block() by passing a proof argument for each
 
+ethereum.new_block(101, previous_hash=None)
+
 # STEP 5 Print the chain with the new changes
 
+print(ethereum.chain)
+
 # STEP 6 Repeat steps 3-5 to record two more transactions
+
+#add new transaction, add the block to the chain, print the result
+ethereum.new_transaction('Alice', 'Bob', '.11 BTC')
+ethereum.new_block(102, previous_hash=None)
+print(ethereum.chain)
+
+#add new transaction, add the block to the chain, print the result
+ethereum.new_transaction('Z', 'Tofr', '.02 BTC')
+ethereum.new_block(103, previous_hash=None)
+print(ethereum.chain)
+
+#add new transaction, add the block to the chain, print the result
+ethereum.new_transaction('Biden', 'Obama', '.004 BTC')
+ethereum.new_block(104, previous_hash=None)
+print(ethereum.chain)
+
 
 #Note:(optional) You may add any formatting symbols to show how the chain looks at each phase
