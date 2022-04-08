@@ -78,7 +78,7 @@ print(ethereum.chain)
 
 # STEP 3 initiate the first transaction of 1BTC from ___ to ___ by calling the new_transaction() on the object
 
-ethereum.new_transaction('Emma', 'Cleo', '.05 BTC')
+ethereum.new_transaction('Emma', 'Cleo', '.05 ETH')
 
 # STEP 4 add the new block to the chain using the new_block() by passing a proof argument for each
 
@@ -91,17 +91,17 @@ print(ethereum.chain)
 # STEP 6 Repeat steps 3-5 to record two more transactions
 
 #add new transaction, add the block to the chain, print the result
-ethereum.new_transaction('Alice', 'Bob', '.11 BTC')
+ethereum.new_transaction('Alice', 'Bob', '.11 ETH')
 ethereum.new_block(102, previous_hash=None)
 print(ethereum.chain)
 
 #add new transaction, add the block to the chain, print the result
-ethereum.new_transaction('Z', 'Tofr', '.02 BTC')
+ethereum.new_transaction('Z', 'Tofr', '.02 ETH')
 ethereum.new_block(103, previous_hash=None)
 print(ethereum.chain)
 
 #add new transaction, add the block to the chain, print the result
-ethereum.new_transaction('Biden', 'Obama', '.004 BTC')
+ethereum.new_transaction('Biden', 'Obama', '.004 ETH')
 ethereum.new_block(104, previous_hash=None)
 print(ethereum.chain)
 
