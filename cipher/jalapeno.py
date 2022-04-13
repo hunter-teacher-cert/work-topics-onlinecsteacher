@@ -15,6 +15,7 @@ def encrypt(message,key):
 
         #vigenere encryption formula per char: C = (P+d)%26
         #adding by d in order to move that many steps ahead
+        # include %26 in case you have to wraparound to the start of the alphabet, e.g. W + E = A
         c = chr(((p+d)%26)+65) #add 65 again to get to letters in ascii code
         encrypted+=c
         i+=1
@@ -30,13 +31,13 @@ def decrypt(secret,key):
     #use a while loop to iterate through message and key
     i = 0
     while (i<len(secret)): #iterating through the message
-        iKey = i%len(key) #index of key string
+        iKey = i%len(key) #set iKey equal to the index of key string
 
         #convert both the encrypted char and the key into ASCII codes
         c = ord(secret[i])-65 #ord to convert chr to ascii, 65 due to A's ascii code
         d = ord(key[iKey])-65
 
-        #use the decryption formula of p = (c-d)%26
+        #use the decryption formula of p = (c-d)%26, e.g. -1%26 = 25
         #convert the decrypted ASCII into a character
         p = chr(((c-d)%26) + 65)
         #concatenate on to the decrypted subtracting
