@@ -88,7 +88,7 @@ while True:
     i += 1
     pg.draw.circle(window, (255, 0, 0), (x,y), 5)
 
-# HW- Complete connectind the lines
+# HW- Complete connecting the lines
   connect_points(0, 1, points)
 
   
