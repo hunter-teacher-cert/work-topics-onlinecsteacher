@@ -11,14 +11,14 @@ Homework assignment: https://docs.google.com/document/d/1FJee9FxN36332Xk4lOcG4GG
 # HW- Complete connecting the lines
   connect_points(0, 1, points)\
   connect_points(1, 2, points)\
-  connect_points(2, 3, points)
-  connect_points(0, 3, points)
-  connect_points(0, 4, points)
-  connect_points(4, 5, points)
-  connect_points(1, 5, points)
-  connect_points(5, 6, points)
-  connect_points(2, 6, points)
-  connect_points(6, 7, points)
-  connect_points(3, 7, points)
-  connect_points(4, 7, points)
+  connect_points(2, 3, points)\
+  connect_points(0, 3, points)\
+  connect_points(0, 4, points)\
+  connect_points(4, 5, points)\
+  connect_points(1, 5, points)\
+  connect_points(5, 6, points)\
+  connect_points(2, 6, points)\
+  connect_points(6, 7, points)\
+  connect_points(3, 7, points)\
+  connect_points(4, 7, points)\
 
