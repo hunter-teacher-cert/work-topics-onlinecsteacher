@@ -12,16 +12,18 @@ projection_matrix = [[1,0,0],
 
 # makes a list of size 8 for the 8 points in a cube
 # enter all the vertices of our cube into each index(do not change!)
-#TODO: YOU WILL HAVE TO CHANGE THE POINTS BASED ON THE SHAPE YOU ARE CREATING
-cube_points = [n for n in range(8)]
+cube_points = [n for n in range(5)]
 cube_points[0] = [[-1],[-1],[1]]
-
+cube_points[1] = [[1],[-1],[1]]
+cube_points[2] = [[1],[1],[1]]
+cube_points[3] = [[-1],[1],[1]]
+cube_points[4] = [[0],[0],[-1]]
 
 # Let's do matrix multiplication! This allows us to convert our 3d points into a 2d array
 def multiply_m(a, b):
   a_rows = len(a)
   a_cols = len(a[0])
-  
+
   b_rows= len(b)
   b_cols= len(b[0])
   results=[[0 for _ in range(b_cols)] for _ in range(a_rows)]
@@ -83,8 +85,16 @@ while True:
     i += 1
     pg.draw.circle(window, (255, 0, 0), (x,y), 5)
 
-# HW- Finishing connecting the points of the cube.
+# HW- Complete connecting the lines
   connect_points(0, 1, points)
+  connect_points(1, 2, points)
+  connect_points(2, 3, points)
+  connect_points(0, 3, points)
+  connect_points(0, 4, points)
+  connect_points(1, 4, points)
+  connect_points(2, 4, points)
+  connect_points(3, 4, points)
+  
 
   
   # don't change, allows you to quit preview

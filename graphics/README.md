@@ -8,7 +8,7 @@ Toy Story was the first fully computer-animated movie, but just because it was a
 Homework assignment: https://docs.google.com/document/d/1FJee9FxN36332Xk4lOcG4GG22zev9WAqb_L60toQO2E/edit?usp=sharing
 
 
-### HW- Complete connecting the lines
+### HW 1- Complete connecting the lines
   connect_points(0, 1, points)\
   connect_points(1, 2, points)\
   connect_points(2, 3, points)\
@@ -22,3 +22,18 @@ Homework assignment: https://docs.google.com/document/d/1FJee9FxN36332Xk4lOcG4GG
   connect_points(3, 7, points)\
   connect_points(4, 7, points)
 
+### HW 2- Create your own shape and connect the lines
+cube_points[0] = [[-1],[-1],[1]]\
+cube_points[1] = [[1],[-1],[1]]\
+cube_points[2] = [[1],[1],[1]]\
+cube_points[3] = [[-1],[1],[1]]\
+cube_points[4] = [[0],[0],[-1]]
+
+  connect_points(0, 1, points)\
+  connect_points(1, 2, points)\
+  connect_points(2, 3, points)\
+  connect_points(0, 3, points)\
+  connect_points(0, 4, points)\
+  connect_points(1, 4, points)\
+  connect_points(2, 4, points)\
+  connect_points(3, 4, points)
